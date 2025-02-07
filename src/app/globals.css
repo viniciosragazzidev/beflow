@@ -1,21 +1,189 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Error Colors */
+  --color-error-lighter: #f7d4d6;
+  --color-error-light: #ff1a1a;
+  --color-error: #ee0000;
+  --color-error-dark: #c50000;
+
+  /* Success Colors */
+  --color-success-lighter: #d3e5ff;
+  --color-success-light: #3291ff;
+  --color-success: #0070f3;
+  --color-success-dark: #0761d1;
+
+  /* Warning Colors */
+  --color-warning-lighter: #fff0cf;
+  --color-warning-light: #f7ba55;
+  --color-warning: #f5a623;
+  --color-warning-dark: #ab570a;
+
+  /* Primary Background */
+  --color-primary-bg-dark: #000000;
+  --color-primary-bg-light: #ffffff;
+
+  /* Accent Colors */
+  --color-accent-1-dark: #19191a;
+  --color-accent-1-light: #fafafa;
+  --color-accent-2-dark: #333333;
+  --color-accent-2-light: #eaeaea;
+  --color-accent-3-dark: #444444;
+  --color-accent-3-light: #999999;
+  --color-accent-4-dark: #666666;
+  --color-accent-4-light: #888888;
+  --color-accent-5: #666666;
+  --color-accent-6: #444444;
+  --color-accent-7: #333333;
+  --color-accent-8: #111111;
+
+  /* Highlight Colors */
+  --color-highlight-purple: #f81ce5;
+  --color-highlight-magenta: #eb367f;
+  --color-highlight-pink: #ff0080;
+  --color-highlight-yellow: #ffec00;
+
+  /* Additional Colors */
+  --color-cyan-lighter: #aaffec;
+  --color-cyan-light: #79ffe1;
+  --color-cyan: #50e3c2;
+  --color-cyan-dark: #29bc9b;
+
+  --color-violet-lighter: #d8ccf1;
+  --color-violet-light: #8a63d2;
+  --color-violet: #7928ca;
+  --color-violet-dark: #4c2889;
+
+  --color-blue-lighter: #cceeff;
+  --color-blue-light: #66bbff;
+  --color-blue: #007aff;
+  --color-blue-dark: #0055aa;
+  --color-blue-700: #0072f5;
+  --color-blue-900: #52a8ff;
+
+  --color-red-lighter: #ffcccc;
+  --color-red-light: #ff6666;
+  --color-red: #ff0000;
+  --color-red-dark: #990000;
+  --color-red-900: #ff6166;
+
+  --color-amber-lighter: #ffebcc;
+  --color-amber-light: #ffcc66;
+  --color-amber: #ff9900;
+  --color-amber-dark: #cc7700;
+
+  /* Grayscale */
+  --color-gray-100-dark: #191919;
+  --color-gray-100-light: #f2f2f2;
+  --color-gray-200-dark: #1e1e1e;
+  --color-gray-200-light: #ebebeb;
+  --color-gray-300: #292929;
+  --color-gray-400: #2e2e2e;
+  --color-gray-500: #454545;
+  --color-gray-600: #878787;
+  --color-gray-700: #8f8f8f;
+  --color-gray-800: #7d7d7d;
+  --color-gray-900: #a1a1a1;
+
+  /* App Colors */
+
+  --color-app-bg: #000000;
+  --color-app-bg-light: #fefdfd;
+
+  --color-app-text-destack: #008ae6;
+  --color-app-text-destack-light: #004ca3;
+  --color-app-text-destack-bg: #52baff1a;
+  --color-app-text-destack-bg-light: #e0efff;
+
+  --color-app-input-bg: #19191a;
+  --color-app-input-bg-light: #f2f2f2;
+
+  --color-app-hover-bg: #0b0c0d;
+  --color-app-hover-bg-light: #f3f4f6;
+
+  --color-app-card-bg: #0b0c0d;
+  --color-app-card-bg-light: #f3f4f6;
+
+  --color-app-button-bg: #0b0c0d;
+  --color-app-button-bg-light: #f3f4f6;
+
+  --color-app-toast-bg: #0b0c0d;
+  --color-app-toast-bg-light: #f3f4f6;
+
+  --color-app-subtitle: #c8cbcf;
+  --color-app-subtitle-light: #252b33;
+
+  --color-app-subtext: #9ca3af;
+  --color-app-subtext-light: #6b7280;
+
+  --color-app-border: #333333;
+  --color-app-border-light: #e5e7eb;
+
+  /* Shadows */
+  --shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0px 6px 12px rgba(0, 0, 0, 0.2);
+
+  /* Typography */
+  --font-sans: "Inter", sans-serif;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 20px;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Borders */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Opacity */
+  --opacity-disabled: 0.5;
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.slide-to-top {
+  animation: slide-to-top 0.5s ease-in-out;
+}
+
+.slide-to-top-and-opacity {
+  animation: slide-to-top-and-opacity 0.2s ease-in-out;
+}
+
+select {
+  color-scheme: dark;
+}
+
+@keyframes slide-to-top-and-opacity {
+  from {
+    transform: translateY(15%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes slide-to-top {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
