@@ -53,7 +53,7 @@ const DropdownContainer = ({
   return (
     <div
       ref={dropRef}
-      className={`w-40 min-h-10 slide-to-top-and-opacity  absolute border border-app-border-light dark:border-app-border/30 ${
+      className={`w-44 min-h-10   flex flex-col slide-to-top-and-opacity  absolute border border-app-border-light dark:border-app-border/30 ${
         side === "right" ? "right-10" : "left-10"
       }  top-12 bg-app-card-bg-light dark:bg-app-card-bg ${
         dropdown?.name === info.name ? "block" : "hidden opacity-0 invisible"
@@ -111,7 +111,7 @@ const DropdownItem = ({ children, onClick }: DropdownItemProps) => {
   return (
     <div
       onClick={handleItem}
-      className="px-2 py-1 w-full flex items-center gap-1  border-b border-app-border-light dark:border-app-border/20   hover:rounded-sm hover:bg-app-border-light dark:hover:bg-app-border/15 cursor-pointer"
+      className="px-2 py-2 w-full flex items-center gap-1  border-b border-app-border-light dark:border-app-border/20   hover:rounded-sm hover:bg-app-border-light dark:hover:bg-app-border/15 cursor-pointer"
     >
       {children}
     </div>
