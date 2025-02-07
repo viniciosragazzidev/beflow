@@ -17,7 +17,7 @@ Beflow é uma plataforma inovadora para desenvolvedores postarem seus projetos d
 - **PostgreSQL** – Banco de dados relacional.
 - **Node.js** + **Fastify** – Servidor rápido e eficiente.
 
-- Github Back: https://github.com/seu-usuario/beflow_api.git
+- Github Back: https://github.com/viniciosragazzidev/beflow_api.git
 
 ### Frontend:
 
